@@ -1,4 +1,4 @@
-FROM node:8.9.4-alpine
+FROM node:9.9.0-alpine
 
 RUN addgroup -S app && adduser -S -g app app
 
@@ -45,7 +45,7 @@ RUN chown app:app -R /home/app \
 USER app
 
 ENV cgi_headers="true"
-ENV fprocess="node index.js"
+ENV fprocess="micro index.js"
 ENV mode="http"
 ENV upstream_url="http://127.0.0.1:3000"
 
